@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.wreggit.bluetoothapplication.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/notMap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <LinearLayout
+            android:id="@+id/connectionForm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.15">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="GPS Device"
+                    android:textSize="11pt"/>
+
+                <TextView
+                    android:id="@+id/connection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Connected"
+                    android:layout_below="@+id/title"
+                    android:visibility="invisible"/>
+
+            </RelativeLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.85"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/static_reload"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.85"
+                android:background="@color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_refresh_white_48dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/connectionForm"
+            android:id="@+id/coords"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Current Position: "/>
+
+            <TextView
+                android:id="@+id/lat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"/>
+
+            <TextView
+                android:id="@+id/lng"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:backgroundTint="@android:color/background_dark"
+        app:fabSize="normal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        app:srcCompat="@drawable/ic_my_location_white_48dp" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/notMap" />
+
+</RelativeLayout>
